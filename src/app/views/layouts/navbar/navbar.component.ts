@@ -18,4 +18,8 @@ export class NavbarComponent {
     localStorage.removeItem('token')
     this.router.navigate(['auth/register'])
   }
+
+  onClickMenu(menuSelected: string) {
+    this.mobileNavMenuSelected = menuSelected
+  }
 }
