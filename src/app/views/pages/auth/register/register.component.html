@@ -1,0 +1,145 @@
+<div class="register-wrapper">
+  <div class="mobile-header">
+    <img src="assets/images/logo.svg" alt="Brand Axdif">
+  </div>
+  <div class="register-carousel">
+    <h2>A few clicks away from being a part of Axdif</h2>
+    <p-carousel
+      styleClass="carousel-register"
+      [value]="slides"
+      [numVisible]="1"
+      [autoplayInterval]="3000"
+      autoplay="true"
+    >
+      <ng-template let-slide pTemplate="item">
+        <div class="carousel-content">
+          <img [src]="slide.image" class="mb-5" alt="Slide Image" />
+          <h3>{{ slide.title }}</h3>
+          <p>{{ slide.description }}</p>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+  <div class="register-form">
+    <div class="mobile-heading">
+      <h2>A few clicks away from being a part of Axdif</h2>
+    </div>
+    <div class="form-wrapper">
+        <img src="assets/images/logo.svg" alt="Axdif Logo" class="logo" />
+        <div class="caption mt-3">
+          <h2>Manage all your employee efficiently</h2>
+          <p>
+            Let’s get you all set up so you can verify your personal account <br />
+            and begin setting up your profile
+          </p>
+        </div>
+        <form class="form mt-3">
+          <div class="grid">
+            <div class="col-12 md:col-6">
+              <div class="form-group">
+                <label for="companyName" class="form-label">Company Name</label>
+                <input type="text" pInputText placeholder="e.g John" />
+              </div>
+            </div>
+            <div class="col-12 md:col-6">
+              <div class="form-group">
+                <label for="fullname" class="form-label">Fullname</label>
+                <input type="text" pInputText placeholder="e.g Doe" />
+              </div>
+            </div>
+            <div class="col-12 md:col-6">
+              <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="text"
+                  pInputText
+                  placeholder="e.g john.doe@mail.com"
+                />
+              </div>
+            </div>
+            <div class="col-12 md:col-6">
+              <div class="form-group">
+                <label for="email" class="form-label"
+                  >Phone Number (Optional)</label
+                >
+                <div class="grid">
+                  <div class="col-5">
+                    <input
+                      type="text"
+                      class="w-12"
+                      pInputText
+                      placeholder="Country Code"
+                    />
+                  </div>
+                  <div class="col-7">
+                    <input
+                      type="text"
+                      class="w-12"
+                      pInputText
+                      placeholder="e.g john.doe@mail.com"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 md:col-6">
+              <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <p-password
+                  [feedback]="false"
+                  [toggleMask]="true"
+                  placeholder="Insert Password"
+                  class="password-register p-inputtext-sm"
+                ></p-password>
+              </div>
+            </div>
+            <div class="col-12 md:col-6">
+              <div class="form-group">
+                <label for="password" class="form-label">Confirm Password</label>
+                <p-password
+                  [feedback]="false"
+                  [toggleMask]="true"
+                  placeholder="Confirm Password"
+                  class="password-register p-inputtext-sm"
+                ></p-password>
+              </div>
+            </div>
+          </div>
+          <div class="grid mt-2">
+            <div class="col-12">
+              <div class="flex align-items-center gap-2">
+                <p-checkbox
+                  value="one"
+                  class="checkbox-register"
+                  inputId="one"
+                ></p-checkbox>
+                <label for="one" class="checkbox-register-label"
+                  >Yes I want to receive Axdif’s Newsletter</label
+                >
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="flex align-items-center gap-2">
+                <p-checkbox
+                  value="two"
+                  class="checkbox-register"
+                  inputId="two"
+                ></p-checkbox>
+                <label for="two" class="checkbox-register-label"
+                  >I have read and accept the
+                  <a href="#">Terms & Conditions</a> and
+                  <a href="#">Privacy Policy</a>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="grid mt-2">
+              <div class="col-12">
+                  <button pButton pRipple (click)="onClickRegister()" label="Submit" class="button-register p-button-danger p-button-sm"></button>
+              </div>
+          </div>
+        </form>
+    </div>
+    <span class="copyright mt-3">© Copyright 2023. All Right Reserved.</span>
+  </div>
+</div>

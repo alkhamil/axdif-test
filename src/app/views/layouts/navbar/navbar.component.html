@@ -1,0 +1,179 @@
+<nav class="navbar">
+  <div class="navbar-wrapper">
+    <img src="assets/images/brand.svg" alt="Brand Axdif" />
+    <div class="divider"></div>
+    <ng-template #navMenu>
+      <ul class="nav-menu">
+        <li
+          class="nav-menu-item"
+          routerLinkActive="active"
+          routerLink="dashboard/overview"
+        >
+          <span>Overview</span>
+        </li>
+        <li
+          class="nav-menu-item"
+          routerLinkActive="active"
+          routerLink="dashboard/employee-status"
+        >
+          <span>Employee Stats</span>
+        </li>
+        <li class="nav-menu-item" (click)="submissionMenu.toggle($event)">
+          <span>Submission</span>
+          <i class="pi pi-angle-down"></i>
+        </li>
+        <li
+          class="nav-menu-item"
+          routerLinkActive="active"
+          routerLink="dashboard/task"
+        >
+          <span>Task</span>
+        </li>
+        <li
+          class="nav-menu-item"
+          routerLinkActive="active"
+          routerLink="dashboard/chat"
+        >
+          <span>Chat</span>
+        </li>
+        <li
+          class="nav-menu-item"
+          routerLinkActive="active"
+          routerLink="dashboard/payroll"
+        >
+          <span>Payroll</span>
+        </li>
+      </ul>
+    </ng-template>
+    <ng-template [ngTemplateOutlet]="navMenu"></ng-template>
+    <p-overlayPanel styleClass="overlay-mobile-nav-menu" #mobileNavMenu>
+      <ng-template [ngTemplateOutlet]="navMenu"></ng-template>
+    </p-overlayPanel>
+    <p-overlayPanel styleClass="overlay-submission-menu" #submissionMenu>
+      <div class="submission-content">
+        <h3>Submission</h3>
+        <p-divider></p-divider>
+
+        <ul class="submission-menu">
+          <li class="submission-menu-item">
+            <div class="head">
+              <img src="assets/images/ic-attendance.svg" alt="Icon" />
+              <span>Exc. Attendance</span>
+            </div>
+            <p class="caption">
+              Report your special absences to get an exception
+            </p>
+          </li>
+          <li class="submission-menu-item">
+            <div class="head">
+              <img src="assets/images/ic-leave.svg" alt="Icon" />
+              <span>Leave</span>
+            </div>
+            <p class="caption">
+              Submit your leave request here. Don’t forget to pay attention to
+              the quota
+            </p>
+          </li>
+          <li class="submission-menu-item">
+            <div class="head">
+              <img src="assets/images/ic-overtime-request.svg" alt="Icon" />
+              <span>Overtime Requisition</span>
+            </div>
+            <p class="caption">
+              Submit your overtime request here. Use your overtime efficiently
+            </p>
+          </li>
+          <li class="submission-menu-item">
+            <div class="head">
+              <img src="assets/images/ic-overtime.svg" alt="Icon" />
+              <span>Overtime</span>
+            </div>
+            <p class="caption">
+              Report your overtime here. So that your working time is not in
+              vain
+            </p>
+          </li>
+          <li class="submission-menu-item">
+            <div class="head">
+              <img src="assets/images/ic-claim.svg" alt="Icon" />
+              <span>Claim</span>
+            </div>
+            <p class="caption">
+              Submit your reimbursement here. Complete the submission file
+            </p>
+          </li>
+          <li class="submission-menu-item">
+            <div class="head">
+              <img src="assets/images/ic-bussines-trip.svg" alt="Icon" />
+              <span>Business Trip</span>
+            </div>
+            <p class="caption">
+              Submit your business trip here. Complete the submission file
+            </p>
+          </li>
+          <li class="submission-menu-item">
+            <div class="head">
+              <img src="assets/images/ic-cash-advance.svg" alt="Icon" />
+              <span>Cash Advance</span>
+            </div>
+            <p class="caption">
+              Submit your multilevel reimbursement here. Complete the submission
+              file
+            </p>
+          </li>
+          <li class="submission-menu-item">
+            <div class="head">
+              <img src="assets/images/ic-approval.svg" alt="Icon" />
+              <span>Approval</span>
+            </div>
+            <p class="caption">
+              Do all the approval process for your team here
+            </p>
+          </li>
+        </ul>
+      </div>
+    </p-overlayPanel>
+  </div>
+  <div class="mobile-nav-menu" (click)="mobileNavMenu.toggle($event)">
+    <span>{{ mobileNavMenuSelected }}</span>
+    <img src="assets/images/ic-down.svg" alt="Icon" />
+  </div>
+  <div class="profile-wrapper">
+    <div class="profile-box" (click)="profileMenu.toggle($event)">
+      <img src="assets/images/pp.png" alt="" />
+    </div>
+    <p-overlayPanel styleClass="overlay-profile-menu" #profileMenu>
+      <div class="profile-content">
+        <div class="profile-box">
+          <img src="assets/images/pp.png" alt="" />
+        </div>
+        <div class="description">
+          <span class="fullname">Muhamamad Iqra Djauhari</span>
+          <span class="email">iqra@elebram.com</span>
+          <span class="role">Employee</span>
+        </div>
+      </div>
+      <ul class="profile-menu">
+        <li class="profile-menu-item">
+          <div class="content">
+            <img src="assets/images/ic-profile.svg" alt="Profile" />
+            <span class="label">My Profile</span>
+          </div>
+        </li>
+        <li class="profile-menu-item">
+          <span class="title">Apprearance</span>
+          <div class="content justify-between">
+            <span class="label bold">Dark Mode</span>
+            <p-inputSwitch [(ngModel)]="appearance"></p-inputSwitch>
+          </div>
+        </li>
+        <li class="profile-menu-item" (click)="onClickLogout()">
+          <div class="content">
+            <img src="assets/images/ic-logout.svg" alt="Logout" />
+            <span class="label">Logout</span>
+          </div>
+        </li>
+      </ul>
+    </p-overlayPanel>
+  </div>
+</nav>

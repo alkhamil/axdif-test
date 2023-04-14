@@ -1,0 +1,46 @@
+<div class="register-wrapper">
+  <div class="mobile-header">
+    <img src="assets/images/logo.svg" alt="Brand Axdif">
+  </div>
+  <div class="register-carousel">
+    <h2>A few clicks away from being a part of Axdif</h2>
+    <p-carousel
+      styleClass="carousel-register"
+      [value]="slides"
+      [numVisible]="1"
+      [autoplayInterval]="3000"
+      autoplay="true"
+    >
+      <ng-template let-slide pTemplate="item">
+        <div class="carousel-content">
+          <img [src]="slide.image" class="mb-5" alt="Slide Image" />
+          <h3>{{ slide.title }}</h3>
+          <p>{{ slide.description }}</p>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+  <div class="register-plan">
+    <div class="mobile-heading">
+      <h2>A few clicks away from being a part of Axdif</h2>
+    </div>
+    <img src="assets/images/logo.svg" alt="Axdif Logo" class="logo" />
+    <div class="success-step-wrapper">
+        <ul class="success-step">
+            <ng-container *ngFor="let step of steps; let i = index">
+                <li class="success-step-item" [class]="setMarginLeft(i)">
+                    <img [src]="step.image" alt="Ilustration">
+                    <div class="caption">
+                        <p class="title">{{ step.title }}</p>
+                        <p class="description">{{ step.description }}</p>
+                    </div>
+                </li>
+            </ng-container>
+        </ul>
+        <div class="mt-5 md:mt-7">
+          <button pButton pRipple (click)="onClickToLogin()" label="Login to Axdif" class="button-register p-button-danger p-button-sm"></button>
+        </div>
+    </div>
+    <span class="copyright mt-0 md:mt-3">© Copyright 2023. All Right Reserved.</span>
+  </div>
+</div>

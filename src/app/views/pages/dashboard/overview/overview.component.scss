@@ -1,0 +1,399 @@
+:host::ng-deep {
+  .card-summary {
+    padding: 16px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 1px 1px 2px #00000005;
+    border: 1px solid #e2e4eb;
+    border-radius: 6px;
+    opacity: 1;
+    height: 100%;
+    .p-card-header {
+      h6 {
+        font-size: 16px;
+        color: #212121;
+      }
+      .text-period {
+        color: #212121;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .calendar-custom {
+        &::after {
+          content: "";
+          width: 30px;
+          height: 30px;
+          background: url("../../../../../assets/images/ic-calendar.png")
+            no-repeat;
+          display: inline-block;
+          position: absolute;
+          right: 0;
+          top: 5px;
+        }
+        input {
+          height: 34px;
+          border-radius: 4px;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 900px) {
+      .p-card-header {
+        .text-period {
+          display: none;
+        }
+
+        .calendar-custom {
+          input {
+            width: 130px;
+            height: 34px;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+
+    .p-card-body {
+      padding: 0;
+      .p-card-content {
+        padding: 0;
+        .card-summary-item {
+          background: #ffffff 0% 0% no-repeat padding-box;
+          box-shadow: 1px 1px 2px #00000005;
+          border: 1px solid #e2e4eb;
+          border-radius: 6px;
+          opacity: 1;
+
+          .p-card-body {
+            .p-card-content {
+              display: flex;
+              flex-direction: column;
+              gap: 6px;
+              padding: 20px;
+              .title {
+                color: #808d93;
+                font-size: 14px;
+                font-weight: 500;
+              }
+
+              .count {
+                color: #212121;
+                font-size: 18px;
+                font-weight: 700;
+              }
+            }
+
+            @media only screen and (max-width: 900px) {
+              .p-card-content {
+                padding: 14px;
+
+                .title {
+                  font-size: 10px;
+                  font-weight: 500;
+                }
+
+                .count {
+                  font-size: 14px;
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .card-task {
+    padding: 16px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 1px 1px 2px #00000005;
+    border: 1px solid #e2e4eb;
+    border-radius: 6px;
+    opacity: 1;
+    .p-card-header {
+      h6 {
+        font-size: 16px;
+        color: #212121;
+      }
+      .see-all {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+
+        span {
+          font-size: 12px;
+          color: #0796e5;
+          font-weight: 500;
+        }
+
+        img {
+          width: 1rem;
+        }
+      }
+    }
+
+    .p-card-body {
+      padding: 0;
+      .p-card-content {
+        padding: 0;
+        .card-task-item {
+          background: #ffffff 0% 0% no-repeat padding-box;
+          box-shadow: 1px 1px 2px #00000005;
+          border: 1px solid #e2e4eb;
+          border-radius: 6px;
+          opacity: 1;
+
+          .p-card-body {
+            .p-card-content {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 2px;
+              padding: 16px;
+              .task-info {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                .title {
+                  color: #808d93;
+                  font-size: 14px;
+                  font-weight: 500;
+                }
+
+                .count {
+                  color: #212121;
+                  font-size: 16px;
+                  font-weight: 600;
+                }
+              }
+
+              .task-detail {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                a {
+                  display: flex;
+                  gap: 4px;
+                  align-items: center;
+                  text-decoration: none;
+
+                  img {
+                    width: 1.5rem;
+                  }
+
+                  span {
+                    color: #808d93;
+                    font-size: 14px;
+                    font-weight: 400;
+                  }
+                }
+
+                .badge {
+                  color: #808d93;
+                  font-size: 14px;
+                  font-weight: 500;
+                  background: #fafafa;
+                  padding: 8px 14px;
+                  border-radius: 40px;
+
+                  &.badge-success {
+                    background: #09a2621f;
+                    color: #09a262;
+                  }
+                }
+              }
+            }
+            @media only screen and (max-width: 900px) {
+              .p-card-content {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 6px;
+
+                .task-info {
+                  .title {
+                    font-size: 12px;
+                  }
+
+                  .count {
+                    font-size: 16px;
+                  }
+                }
+
+                .task-detail {
+                  gap: 10px;
+                  img {
+                    width: 1rem;
+                  }
+                  a {
+                    span {
+                      font-size: 10px;
+                    }
+                  }
+                  .badge {
+                    padding: 4px 8px;
+                    font-size: 10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .card-profile {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 1px 1px 2px #00000005;
+    border: 1px solid #e2e4eb;
+    border-radius: 6px;
+    opacity: 1;
+
+    .p-card-body {
+      padding: 16px;
+      .p-card-content {
+        padding: 0;
+        .profile-title {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 4px;
+          margin-top: -65px;
+
+          .profile-pict {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+            }
+          }
+
+          .fullname {
+            color: #000000;
+            font-size: 14px;
+            font-weight: 600;
+          }
+
+          .company {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            img {
+              width: 1rem;
+            }
+
+            span {
+              font-size: 12px;
+              color: #000000;
+            }
+          }
+        }
+
+        .profile-info {
+          width: 100%;
+          border-collapse: collapse;
+
+          tr {
+            td {
+              padding: 10px;
+
+              &:nth-child(1) {
+                color: #808d93;
+                font-size: 14px;
+                font-weight: 500;
+              }
+
+              &:nth-child(2) {
+                text-align: right;
+                color: #000000;
+                font-size: 14px;
+                font-weight: 500;
+              }
+
+              @media only screen and (max-width: 900px) {
+                &:nth-child(1) {
+                  font-size: 12px;
+                }
+
+                &:nth-child(2) {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .card-attendance {
+    padding: 16px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 1px 1px 2px #00000005;
+    border: 1px solid #e2e4eb;
+    border-radius: 6px;
+    opacity: 1;
+    .p-card-header {
+      h6 {
+        font-size: 16px;
+        color: #212121;
+      }
+    }
+
+    .p-card-body {
+      padding: 0;
+      .p-card-content {
+        padding: 0;
+
+        .card-attendance-item {
+          background: #ffffff 0% 0% no-repeat padding-box;
+          box-shadow: 1px 1px 2px #00000005;
+          border: 1px solid #e2e4eb;
+          border-radius: 6px;
+          opacity: 1;
+          overflow: hidden;
+
+          .p-card-header {
+            overflow: hidden;
+            .border-top {
+              height: 10px;
+
+              &.border-top-success {
+                background: #09a262;
+              }
+              &.border-top-danger {
+                background: #ff2442;
+              }
+            }
+          }
+
+          .p-card-body {
+            .p-card-content {
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+              padding: 20px;
+              .title {
+                color: #808d93;
+                font-size: 14px;
+                font-weight: 500;
+              }
+
+              .count {
+                color: #212121;
+                font-size: 18px;
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

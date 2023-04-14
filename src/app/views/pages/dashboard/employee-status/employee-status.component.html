@@ -1,0 +1,284 @@
+<main>
+  <div class="head flex align-items-start md:align-items-center justify-content-between">
+    <h2>Employee Summary</h2>
+    <div class="flex align-items-center gap-3 md:gap-4">
+      <div class="flex align-items-center gap-1 md:gap-3">
+        <span class="text-label">Display Data in</span>
+        <p-selectButton
+          [options]="stateOptions"
+          [(ngModel)]="value"
+          optionLabel="label"
+          optionValue="value"
+          styleClass="select-button-custom"
+        ></p-selectButton>
+      </div>
+      <div class="flex align-items-center gap-3">
+        <span class="text-label">Periode</span>
+        <p-calendar
+          [(ngModel)]="date"
+          view="year"
+          dateFormat="yy"
+          [readonlyInput]="true"
+          styleClass="calendar-custom"
+        ></p-calendar>
+      </div>
+    </div>
+  </div>
+  <div class="grid mt-3">
+    <div class="col-12">
+      <div class="grid">
+        <div class="col-12 md:col-8">
+          <p-card styleClass="card-attendance-summary">
+            <ng-template pTemplate="header">
+              <div class="flex align-items-center justify-content-between">
+                <h6 class="title">Attendance Summary</h6>
+              </div>
+            </ng-template>
+            <div class="mx-0 md:mx-3">
+              <p-chart
+                type="bar"
+                height="220"
+                [data]="chartAttendanceSummaryData"
+                [options]="chartAttendanceSummaryOptions"
+              ></p-chart>
+              <div class="grid mt-3">
+                <div class="col-6 md:col-3">
+                  <p-card styleClass="card-attendance-summary-item blue-500">
+                    <div class="flex align-items-center gap-1">
+                      <p class="title">Total Working Days</p>
+                      <img src="assets/images/ic-info.svg" alt="Icon" />
+                    </div>
+                    <p class="count">237</p>
+                  </p-card>
+                </div>
+                <div class="col-6 md:col-3">
+                  <p-card styleClass="card-attendance-summary-item blue-400">
+                    <div class="flex align-items-center gap-1">
+                      <p class="title">Actual Working Hours</p>
+                      <img src="assets/images/ic-info.svg" alt="Icon" />
+                    </div>
+                    <p class="count">2126 hr 14 min</p>
+                  </p-card>
+                </div>
+                <div class="col-6 md:col-3">
+                  <p-card styleClass="card-attendance-summary-item blue-300">
+                    <div class="flex align-items-center gap-1">
+                      <p class="title">Total Working Hours</p>
+                      <img src="assets/images/ic-info.svg" alt="Icon" />
+                    </div>
+                    <p class="count">2930 hr 26 min</p>
+                  </p-card>
+                </div>
+                <div class="col-6 md:col-3">
+                  <p-card styleClass="card-attendance-summary-item red-500">
+                    <div class="flex align-items-center gap-1">
+                      <p class="title">Total Late Coming</p>
+                      <img src="assets/images/ic-info.svg" alt="Icon" />
+                    </div>
+                    <p class="count">0</p>
+                  </p-card>
+                </div>
+              </div>
+            </div>
+          </p-card>
+        </div>
+        <div class="col-12 md:col-4">
+          <p-card styleClass="card-attendance-complete">
+            <ng-template pTemplate="header">
+              <div class="flex align-items-center justify-content-between">
+                <h6 class="title">Attendance Completeness</h6>
+              </div>
+            </ng-template>
+            <div class="mx-0 md:mx-3">
+              <p-chart
+                type="pie"
+                height="337"
+                [data]="chartAttendanceCompleteData"
+                [options]="chartAttendanceCompleteOptions"
+              ></p-chart>
+            </div>
+          </p-card>
+        </div>
+        <div class="col-12 md:col-4">
+          <p-card styleClass="card-task-progress">
+            <ng-template pTemplate="header">
+              <div class="flex align-items-center justify-content-between">
+                <h6 class="title">Overall Task Progress</h6>
+              </div>
+            </ng-template>
+            <div class="mx-0 md:mx-3">
+              <p-chart
+                type="pie"
+                height="361"
+                [data]="chartTaskProgressData"
+                [options]="chartTaskProgressOptions"
+              ></p-chart>
+            </div>
+          </p-card>
+        </div>
+        <div class="col-12 md:col-8">
+          <p-card styleClass="card-task-complete">
+            <ng-template pTemplate="header">
+              <div class="flex align-items-center justify-content-between">
+                <h6 class="title">Task Completion in All Project</h6>
+              </div>
+            </ng-template>
+            <div class="mx-0 md:mx-3">
+              <p-chart
+                type="line"
+                height="220"
+                [data]="chartTaskCompleteData"
+                [options]="chartTaskCompleteOptions"
+              ></p-chart>
+              <div class="grid mt-3">
+                <div class="col-12">
+                  <p-card styleClass="card-task-complete-item">
+                    <div class="card-item">
+                      <div class="card-item-content">
+                        <div class="title">
+                          <span>Total Task Completed</span>
+                          <img src="assets/images/ic-info.svg" alt="Icon" />
+                        </div>
+                        <div class="content">
+                          <span>2400</span>
+                          <div class="badge badge-success">
+                            <span>20%</span>
+                            <img src="assets/images/ic-inc.svg" alt="Icon" />
+                          </div>
+                        </div>
+                        <span class="detail">Last Year : 2000 Task</span>
+                      </div>
+                    </div>
+                    <div class="card-item">
+                      <div class="card-item-content">
+                        <div class="title">
+                          <span>Most Completed Tasks At</span>
+                          <img src="assets/images/ic-info.svg" alt="Icon" />
+                        </div>
+                        <div class="content">
+                          <span>185</span>
+                        </div>
+                        <span class="detail">May 2022</span>
+                      </div>
+                    </div>
+                    <div class="card-item">
+                      <div class="card-item-content">
+                        <div class="title">
+                          <span>Total Task Created</span>
+                          <img src="assets/images/ic-info.svg" alt="Icon" />
+                        </div>
+                        <div class="content">
+                          <span>1600</span>
+                          <div class="badge badge-danger">
+                            <span>20%</span>
+                            <img src="assets/images/ic-dec.svg" alt="Icon" />
+                          </div>
+                        </div>
+                        <span class="detail">May 2022</span>
+                      </div>
+                    </div>
+                    <div class="card-item">
+                      <div class="card-item-content">
+                        <div class="title">
+                          <span>Most Completed Tasks At</span>
+                          <img src="assets/images/ic-info.svg" alt="Icon" />
+                        </div>
+                        <div class="content">
+                          <span>UI/UX Design</span>
+                        </div>
+                        <span class="detail">240 Task</span>
+                      </div>
+                    </div>
+                  </p-card>
+                </div>
+              </div>
+            </div>
+          </p-card>
+        </div>
+        <div class="col-12 md:col-12">
+          <p-card styleClass="card-leave-recap">
+            <ng-template pTemplate="header">
+              <div class="flex align-items-center justify-content-between">
+                <h6 class="title">Leave Recap</h6>
+              </div>
+            </ng-template>
+            <p-table [value]="leaveRecaps" [scrollable]="true" styleClass="mt-3 table-custom p-datatable-sm">
+              <ng-template pTemplate="header">
+                <tr>
+                  <th pSortableColumn="leaveCode" style="min-width: 200px" pFrozenColumn>
+                    <div class="flex align-items-center justify-content-between">
+                      Leave Code <p-sortIcon class="sort-custom" field="leaveCode"></p-sortIcon>
+                    </div>
+                  </th>
+                  <th pSortableColumn="requestOn" style="min-width: 200px">
+                    <div class="flex align-items-center justify-content-between">
+                      Request On <p-sortIcon class="sort-custom" field="requestOn"></p-sortIcon>
+                    </div>
+                  </th>
+                  <th pSortableColumn="leaveType" style="min-width: 200px">
+                    <div class="flex align-items-center justify-content-between">
+                      Leave Type <p-sortIcon class="sort-custom" field="leaveType"></p-sortIcon>
+                    </div>
+                  </th>
+                  <th pSortableColumn="startDate" style="min-width: 200px">
+                    <div class="flex align-items-center justify-content-between">
+                      Start Date <p-sortIcon class="sort-custom" field="startDate"></p-sortIcon>
+                    </div>
+                  </th>
+                  <th pSortableColumn="endDate" style="min-width: 200px">
+                    <div class="flex align-items-center justify-content-between">
+                      End Date <p-sortIcon class="sort-custom" field="endDate"></p-sortIcon>
+                    </div>
+                  </th>
+                  <th pSortableColumn="duration" style="min-width: 200px">
+                    <div class="flex align-items-center justify-content-between">
+                      Duration <p-sortIcon class="sort-custom" field="duration"></p-sortIcon>
+                    </div>
+                  </th>
+                  <th pSortableColumn="dayType" style="min-width: 200px">
+                    <div class="flex align-items-center justify-content-between">
+                      Day Type <p-sortIcon class="sort-custom" field="dayType"></p-sortIcon>
+                    </div>
+                  </th>
+                  <th pSortableColumn="leaveCategory" style="min-width: 200px">
+                    <div class="flex align-items-center justify-content-between">
+                      Leave Category <p-sortIcon class="sort-custom" field="leaveCategory"></p-sortIcon>
+                    </div>
+                  </th>
+                  <th pSortableColumn="status" style="min-width: 200px">
+                    <div class="flex align-items-center justify-content-between">
+                      Status <p-sortIcon class="sort-custom" field="status"></p-sortIcon>
+                    </div>
+                  </th>
+                  <th pSortableColumn="reason" style="min-width: 200px">
+                    <div class="flex align-items-center justify-content-between">
+                      Reason <p-sortIcon class="sort-custom" field="reason"></p-sortIcon>
+                    </div>
+                  </th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-leave>
+                <tr>
+                  <td pFrozenColumn>{{ leave.leaveCode }}</td>
+                  <td>{{ leave.requestOn }}</td>
+                  <td>{{ leave.leaveType }}</td>
+                  <td>{{ leave.startDate }}</td>
+                  <td>{{ leave.endDate }}</td>
+                  <td>{{ leave.duration }}</td>
+                  <td>{{ leave.dayType }}</td>
+                  <td>{{ leave.leaveCategory }}</td>
+                  <td>
+                    <div class="badge badge-success">
+                      {{ leave.status }}
+                    </div>
+                  </td>
+                  <td>{{ leave.reason }}</td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </p-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

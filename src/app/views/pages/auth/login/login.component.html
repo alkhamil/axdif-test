@@ -1,0 +1,55 @@
+<div class="login-wrapper">
+    <div class="login-mask">
+        <img src="assets/images/login-bg.png" alt="Login Ilustration" class="background">
+    </div>
+    <div class="login-form">
+        <div class="form-wrapper">
+            <img src="assets/images/logo.svg" alt="Axdif Logo" class="logo">
+            <div class="caption">
+                <h2>Login to your Account</h2>
+                <p>Hi, welcome back! Select method to login</p>
+            </div>
+    
+            <div class="login-method">
+                <button pButton class="p-button-outlined p-button-secondary p-button-sm">
+                    <img alt="logo" src="assets/images/login-goggle.png" />
+                    <span class="font-bold">Google</span>
+                </button>
+                <button pButton class="p-button-outlined p-button-secondary p-button-sm">
+                    <img alt="logo" src="assets/images/login-linkedin.png" />
+                    <span class="font-bold">Linkedin</span>
+                </button>
+            </div>
+    
+            <p-divider styleClass="m-0 p-0" align="center">
+                <span>Or continue with email</span>
+            </p-divider>
+
+            <form class="form" [formGroup]="form">
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" placeholder="e.g john.doe@email.com" pInputText formControlName="email" class="p-inputtext-sm"/>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <p-password formControlName="password" [feedback]="false" [toggleMask]="true" placeholder="Insert Password" class="login-password p-inputtext-sm"></p-password>
+                </div>
+                <div class="form-group">
+                    <div class="flex align-items-center justify-content-between">
+                        <div class="flex align-items-center gap-2">
+                            <p-checkbox value="Remember me" class="login-checkbox" inputId="rememberme"></p-checkbox>
+                            <label for="rememberme" class="login-checkbox-label">Remember me</label>
+                        </div>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button pButton pRipple [disabled]="loading" [loading]="loading" (click)="onClickSubmit()" label="Login" class="login-button p-button-danger p-button-sm"></button>
+                </div>
+            </form>
+        </div>
+        <div class="privacy-police">
+            <span>Privacy Policy • Terms & Condition</span>
+        </div>
+    </div>
+</div>
